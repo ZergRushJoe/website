@@ -8,12 +8,19 @@ const path = require('path');
 
 //settings
 app.use('/public', express.static(path.join(__dirname, 'public')));
-app.set('view engine', 'pug');
 
 
-app.get('/', function (req, res)
+
+app.get('/', function (req, res,next)
 {
-    res.render('body');
+    
 });
-
+app.use(function(err,req,res,next)
+{
+    if(err)
+    {
+        res.send('server error');
+    }
+    res.send('object not found');
+});
 app.listen(80);
