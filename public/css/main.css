@@ -3,14 +3,48 @@ html, body
 {
     margin: 0; 
     padding: 0;
-    background: linear-gradient(180deg,#009688,#000 );
-    background-size: cover;
 }
-.bubble
+ul
 {
-    position: fixed;
+    list-style: none;
+    margin:0;
+    padding:0;
 }
-#bubbleHolder
+header
 {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:nowrap;
+
+}
+#mainNav
+{
+    width: 348px;
+}
+#mainNav ul
+{
+}
+#mainNav ul li
+{
+    position:relative;
+    display: inline;
+    margin-right:-22px;
+    top:-165px;
+    transition: top .2s;
+    cursor: pointer;
+}
+#mainNav ul li:hover
+{
+    top:-120px;
+}
+#mainNav ul li span
+{
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    left:0;
+    bottom: 0;
+    font-size: 18px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
 }
