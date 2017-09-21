@@ -8,11 +8,11 @@ const path = require('path');
 
 //settings
 app.use('/public', express.static(path.join(__dirname, 'public')));
-
-
+app.set('view engine', 'pug');
+app.set('views',path.join(__dirname,'/pug'));
 app.get('/', function (req, res,next)
 {
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.render('index.pug');
 });
 
 app.use(function(err,req,res,next)
@@ -20,7 +20,10 @@ app.use(function(err,req,res,next)
     if(err)
     {
         res.send('server error');
+        console.log(err.toString());
+        return;
     }
     res.send('object not found');
+    return;
 });
 app.listen(80);
